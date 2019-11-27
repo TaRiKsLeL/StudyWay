@@ -1,2 +1,1 @@
-# StudyWay
-## додаю інфу
+# Study-Way
