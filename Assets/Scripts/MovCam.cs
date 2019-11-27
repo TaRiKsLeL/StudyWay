@@ -15,7 +15,7 @@ public class MovCam : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.UpArrow))
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 5);
+        //    transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + 5);
             print("kek");
         }
         
