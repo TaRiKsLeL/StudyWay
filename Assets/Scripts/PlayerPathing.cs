@@ -16,41 +16,57 @@ public class PlayerPathing : MonoBehaviour
         m_Rigidbody = GetComponent<Rigidbody>();
 
         wayPoints = GetWaypoints();
-        //transform.position = ;
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            Move();
+            Move(true);
         }
 
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            Move();
+            Move(false);
         }
 
 
     }
 
-    private void Move()
+    private void Move(bool forward)
     {
-        if (waypointIndex <= wayPoints.Count - 1)
+        if (waypointIndex <= wayPoints.Count - 1 || waypointIndex >= 0)
         {
+            
+                var targetPosition = wayPoints[waypointIndex].transform.position;
+                var movementThisFrame = m_Speed * Time.deltaTime;
 
-            var targetPosition = wayPoints[waypointIndex].transform.position;
-            var movementThisFrame = m_Speed * Time.deltaTime;
-            transform.position = Vector3.MoveTowards(transform.position, targetPosition, movementThisFrame);
+            if (forward)
+            {
+                    transform.position = Vector3.MoveTowards(transform.position, targetPosition, movementThisFrame);
 
-            if(Vector3.Distance(wayPoints[waypointIndex].transform.position,transform.position)<1)
-             {
-                    waypointIndex++;
+                    if (Vector3.Distance(wayPoints[waypointIndex].transform.position, transform.position) < 1)
+                    {
+                        waypointIndex++;
+                        print(waypointIndex);
+                    }
+                }
+            else
+            {
+                targetPosition = wayPoints[waypointIndex-1].transform.position;
+                transform.position = Vector3.MoveTowards(transform.position, targetPosition, movementThisFrame);
+
+                if (Vector3.Distance(wayPoints[waypointIndex-1].transform.position, transform.position) < 1)
+                {
+                    waypointIndex--;
                     print(waypointIndex);
-             }
+                }
+
+            }
+            
 
         }
     }
