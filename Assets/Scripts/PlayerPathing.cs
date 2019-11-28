@@ -23,14 +23,43 @@ public class PlayerPathing : MonoBehaviour
     void Update()
     {
 
+        //if (Input.GetKey(KeyCode.UpArrow))
+        //{
+        //    //Move(true);
+        //    transform.position = new Vector3(0, 0, transform.position.z + m_Speed * Time.deltaTime);
+        //}
+
+        //if (Input.GetKey(KeyCode.DownArrow))
+        //{
+        //    //Move(false);
+        //}
+        //if (Input.GetKey(KeyCode.LeftArrow))
+        //{
+        //    transform.Rotate(Vector3.up * 7*m_Speed * Time.deltaTime);
+        //}
+        //if (Input.GetKey(KeyCode.RightArrow))
+        //{
+        //    transform.Rotate(Vector3.down *7 *m_Speed * Time.deltaTime);
+        //}
+
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            transform.Rotate(Vector3.down * 7 * m_Speed * Time.deltaTime);
+
+        }
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            transform.Rotate(Vector3.up * 7 * m_Speed * Time.deltaTime);
+
+        }
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            Move(true);
+            transform.position += transform.forward* m_Speed * Time.deltaTime;
         }
-
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            Move(false);
+            transform.position -= transform.forward * m_Speed * Time.deltaTime;
+
         }
 
 
