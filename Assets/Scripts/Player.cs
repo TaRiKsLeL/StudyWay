@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerPathing : MonoBehaviour
+public class Player : MonoBehaviour
 {
     [SerializeField] GameObject pathPrefab;
     [SerializeField] float m_Speed = 1f;
@@ -15,7 +15,8 @@ public class PlayerPathing : MonoBehaviour
     {
         m_Rigidbody = GetComponent<Rigidbody>();
 
-        wayPoints = GetWaypoints();
+
+        //wayPoints = GetWaypoints();
 
     }
 
@@ -108,7 +109,6 @@ public class PlayerPathing : MonoBehaviour
 
         foreach (Transform childTransform in pathPrefab.transform)
         {
-           // childTransform.position = new Vector3(childTransform.position.x,gameObject.transform.position.y,childTransform.position.z);
             waveWaypoints.Add(childTransform);
         }
 

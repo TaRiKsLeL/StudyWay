@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class CameraScript : MonoBehaviour
 {
-    public Transform playerObject;
+    [SerializeField] public Transform playerObject;
 
     public float distanceFromObject = 8f;
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
     // Update is called once per frame
