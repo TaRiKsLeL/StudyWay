@@ -1,13 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class PlatformBehaviourScript : MonoBehaviour
 {
-    [SerializeField] GameObject obstacle;
+    [SerializeField] public int index;
+    [SerializeField] public GameObject obstacle;
     [SerializeField] int scoreToUnlock;
     [SerializeField] bool unlocked=false;
 
+    private void Start()
+    {
+        print("In PlatformBehaviourScript - Start()");
+        
+        if (SaveSystem.LoadGameSession() != null)
+        {
+            GameData data = SaveSystem.LoadGameSession();
+
+            if (data.unlockedObstaclesByTriggerIndex != null)
+            {
+                if (data.unlockedObstaclesByTriggerIndex.ToList().Contains(index)){
+                    print("My index " + index + " is in List");
+                    obstacle.SetActive(false);
+                }
+            }
+        }
+    }
 
     public int GetScoreToUnlock()
     {
@@ -16,9 +35,10 @@ public class PlatformBehaviourScript : MonoBehaviour
 
     public bool TryToUnlockObstacle(int score)
     {
+        print("Score To Unlock:" + scoreToUnlock + "   Score: " + score);
+
         if (score >= scoreToUnlock)
         {
-            obstacle.SetActive(false);
             unlocked = true;
             return true;
         }

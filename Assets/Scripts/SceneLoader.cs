@@ -22,7 +22,7 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene("Main Scene");
         if (!UnityEngine.SceneManagement.SceneManager.GetActiveScene().name.Equals("MenuScene"))
         {
-            FindObjectOfType<GameSession>().LoadGameSession();
+               FindObjectOfType<GameSession>().Awake();
         }
     }
 

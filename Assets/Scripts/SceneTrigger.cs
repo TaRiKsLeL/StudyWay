@@ -61,6 +61,8 @@ public class SceneTrigger : MonoBehaviour
     // if this script is on an object with a collider display the Gui
     void OnTriggerEnter()
     {
+ 
+
         GuiOn = true;
     }
 
@@ -85,7 +87,7 @@ public class SceneTrigger : MonoBehaviour
             // All rectangles are now adjusted to the group. (0,0) is the topleft corner of the group.
 
             // We'll make a box so you can see where the group is on-screen.
-            if (GetComponent<PlatformBehaviourScript>() == null)
+            if (!GetComponent<PlatformBehaviourScript>())
             {
                 GUI.Box(BoxSize, WindowTitle);
             }
@@ -105,11 +107,11 @@ public class SceneTrigger : MonoBehaviour
                     }
                     else if (ButtonsOptions[i].OnPressFunction == buttons.onPressFunction.LoadAScene)
                     {
-                        FindObjectOfType<GameSession>().SetOnTriggerIndex(FindObjectOfType<GameSession>().GetTriggerIndex(gameObject));
+                        FindObjectOfType<GameSession>().SetOnTriggerName(gameObject.name);
+                        FindObjectOfType<GameSession>().LoadSavedIndexes();
                         FindObjectOfType<GameSession>().SaveGameSession();
 
                         SceneManager.LoadScene(ButtonsOptions[i].LoadSceneName, LoadSceneMode.Single);
-                        //print(FindObjectOfType<GameSession>().playerPosition);
                     }
 
                 }
