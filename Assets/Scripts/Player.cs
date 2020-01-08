@@ -4,16 +4,19 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] GameObject pathPrefab;
+    //[SerializeField] GameObject pathPrefab;
     [SerializeField] float m_Speed = 1f;
-    List<Transform> wayPoints;
+    //List<Transform> wayPoints;
     Rigidbody m_Rigidbody;
+    Animator anim;
+
     int waypointIndex = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         m_Rigidbody = GetComponent<Rigidbody>();
+        anim = GetComponent<Animator>();
 
 
         //wayPoints = GetWaypoints();
@@ -56,72 +59,95 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.UpArrow))
         {
             transform.position += transform.forward* m_Speed * Time.deltaTime;
+            Move_Ani();
+
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
             transform.position -= transform.forward * m_Speed * Time.deltaTime;
-
         }
 
+   
 
     }
 
-    private void Move(bool forward)
-    {
-        if (waypointIndex <= wayPoints.Count - 1 || waypointIndex >= 0)
-        {
+    //private void Move(bool forward)
+    //{
+    //    if (waypointIndex <= wayPoints.Count - 1 || waypointIndex >= 0)
+    //    {
             
-                var targetPosition = wayPoints[waypointIndex].transform.position;
-                var movementThisFrame = m_Speed * Time.deltaTime;
+    //            var targetPosition = wayPoints[waypointIndex].transform.position;
+    //            var movementThisFrame = m_Speed * Time.deltaTime;
 
-            if (forward)
-            {
-                    transform.position = Vector3.MoveTowards(transform.position, targetPosition, movementThisFrame);
+    //        if (forward)
+    //        {
+    //                transform.position = Vector3.MoveTowards(transform.position, targetPosition, movementThisFrame);
 
-                    if (Vector3.Distance(wayPoints[waypointIndex].transform.position, transform.position) < 1)
-                    {
-                        waypointIndex++;
-                        print(waypointIndex);
-                    }
-                }
-            else
-            {
-                targetPosition = wayPoints[waypointIndex-1].transform.position;
-                transform.position = Vector3.MoveTowards(transform.position, targetPosition, movementThisFrame);
+    //                if (Vector3.Distance(wayPoints[waypointIndex].transform.position, transform.position) < 1)
+    //                {
+    //                    waypointIndex++;
+    //                    print(waypointIndex);
+    //                }
+    //            }
+    //        else
+    //        {
+    //            targetPosition = wayPoints[waypointIndex-1].transform.position;
+    //            transform.position = Vector3.MoveTowards(transform.position, targetPosition, movementThisFrame);
 
-                if (Vector3.Distance(wayPoints[waypointIndex-1].transform.position, transform.position) < 1)
-                {
-                    waypointIndex--;
-                    print(waypointIndex);
-                }
+    //            if (Vector3.Distance(wayPoints[waypointIndex-1].transform.position, transform.position) < 1)
+    //            {
+    //                waypointIndex--;
+    //                print(waypointIndex);
+    //            }
 
-            }
+    //        }
             
 
-        }
-    }
+    //    }
+    //}
 
-
-    List<Transform> GetWaypoints()
+    public void Idle_Ani()
     {
-
-        var waveWaypoints = new List<Transform>();
-
-        foreach (Transform childTransform in pathPrefab.transform)
-        {
-            waveWaypoints.Add(childTransform);
-        }
-
-        return waveWaypoints;
-
+        anim.SetTrigger("Idle");
     }
+
+    public void Move_Ani()
+    {
+        anim.SetTrigger("Move");
+    }
+
+    public void Damage_Ani()
+    {
+        anim.SetTrigger("Damage");
+    }
+
+    public void Death_Ani()
+    {
+        anim.SetTrigger("Death");
+    }
+
+
+//    List<Transform> GetWaypoints()
+//    {
+
+//        var waveWaypoints = new List<Transform>();
+
+//        foreach (Transform childTransform in pathPrefab.transform)
+//        {
+//            waveWaypoints.Add(childTransform);
+//        }
+
+//        return waveWaypoints;
+
+//    }
+
 }
 
 
-public static class IComparableExtension
-{
-    public static bool InRange<T>(this T value, T from, T to) where T : System.IComparable<T>
-    {
-        return value.CompareTo(from) >= 1 && value.CompareTo(to) <= -1;
-    }
-}
+//public static class IComparableExtension
+//{
+//    public static bool InRange<T>(this T value, T from, T to) where T : System.IComparable<T>
+//    {
+//        return value.CompareTo(from) >= 1 && value.CompareTo(to) <= -1;
+//    }
+//}

@@ -6,7 +6,7 @@ public class CameraScript : MonoBehaviour
 {
     [SerializeField] public Transform playerObject;
 
-    public float distanceFromObject = 8f;
+    public float distanceFromObject = 80f;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +29,6 @@ public class CameraScript : MonoBehaviour
 
         transform.position = playerLastPosition;
 
-
+        print("kkeeek camera");
     }
 }
