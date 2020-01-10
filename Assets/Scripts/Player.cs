@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            transform.position += transform.forward* m_Speed * Time.deltaTime;
+            transform.position += transform.forward * m_Speed * Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
@@ -49,8 +49,8 @@ public class Player : MonoBehaviour
 
     public void Move_Ani()
     {
-         anim.SetTrigger("Move");
-      
+        anim.SetTrigger("Move");
+
     }
 
     public void Damage_Ani()
@@ -63,3 +63,4 @@ public class Player : MonoBehaviour
         anim.SetTrigger("Death");
     }
 
+}
