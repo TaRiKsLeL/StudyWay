@@ -30282,7 +30282,7 @@ PrefabInstance:
       propertyPath: BoxSize.width
       value: 400
       objectReference: {fileID: 0}
-<<<<<<< HEAD
+
     - target: {fileID: 2332874938999990766, guid: d6f6806eb9ebb7343934f47d99056574,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -30303,7 +30303,7 @@ PrefabInstance:
       propertyPath: obstacle
       value: 
       objectReference: {fileID: 2126569609}
-=======
+
     - target: {fileID: 261235930720765165, guid: d6f6806eb9ebb7343934f47d99056574,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -30324,7 +30324,7 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 72369bb867b5bcd4b9d79508d5a369d7, type: 2}
->>>>>>> f89a136bb800925fe70d4c767d8302fb6726974e
+
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6f6806eb9ebb7343934f47d99056574, type: 3}
 --- !u!1 &261235931145857186 stripped
