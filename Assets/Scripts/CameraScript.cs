@@ -6,7 +6,7 @@ public class CameraScript : MonoBehaviour
 {
     [SerializeField] public Transform playerObject;
 
-    public float distanceFromObject = 80f;
+    [SerializeField] public float distanceFromObject;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,12 +15,9 @@ public class CameraScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 lookOnObject = playerObject.position - transform.position;
-
-        lookOnObject = playerObject.position - transform.position;
+        /*Vector3 lookOnObject = playerObject.position - transform.position;
 
         transform.forward = lookOnObject.normalized;
-
 
         Vector3 playerLastPosition;
         playerLastPosition = playerObject.position - lookOnObject.normalized * distanceFromObject;
@@ -28,7 +25,6 @@ public class CameraScript : MonoBehaviour
         playerLastPosition.y = playerObject.position.y + distanceFromObject / 2;
 
         transform.position = playerLastPosition;
-
-        print("kkeeek camera");
+        */
     }
 }

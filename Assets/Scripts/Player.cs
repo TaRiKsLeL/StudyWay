@@ -12,6 +12,9 @@ public class Player : MonoBehaviour
 
     int waypointIndex = 0;
 
+
+    bool onMove=false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,6 +49,7 @@ public class Player : MonoBehaviour
         //    transform.Rotate(Vector3.down *7 *m_Speed * Time.deltaTime);
         //}
 
+
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             transform.Rotate(Vector3.down * 7 * m_Speed * Time.deltaTime);
@@ -59,15 +63,22 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.UpArrow))
         {
             transform.position += transform.forward* m_Speed * Time.deltaTime;
-            Move_Ani();
-
         }
         if (Input.GetKey(KeyCode.DownArrow))
         {
             transform.position -= transform.forward * m_Speed * Time.deltaTime;
         }
 
-   
+        if (Input.anyKeyDown)
+        {
+           // onMove = true;
+            Move_Ani();
+        }
+        else
+        {
+            //onMove = false;
+            Idle_Ani();
+        }
 
     }
 
@@ -108,12 +119,20 @@ public class Player : MonoBehaviour
 
     public void Idle_Ani()
     {
-        anim.SetTrigger("Idle");
+        if (!anim.GetBool("Idle"))
+        {
+            print("Set Idle");
+            anim.SetTrigger("Idle");
+        }
     }
 
     public void Move_Ani()
     {
-        anim.SetTrigger("Move");
+        if (!anim.GetBool("Move"))
+        {
+            print("Set Move");
+            anim.SetTrigger("Move");
+        }
     }
 
     public void Damage_Ani()
