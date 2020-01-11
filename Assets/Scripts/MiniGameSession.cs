@@ -10,7 +10,9 @@ public class MiniGameSession : MonoBehaviour
 
     private void Awake()
     {
-        SetUpSingleton();
+        //SetUpSingleton();
+        score = 0;
+        DontDestroyOnLoad(gameObject);
     }
 
     private void SetUpSingleton()
