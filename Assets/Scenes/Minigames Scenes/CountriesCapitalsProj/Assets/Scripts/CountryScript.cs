@@ -8,7 +8,7 @@ public class CountryScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        moveSpeed = Random.Range(0.25f,1.5f);
+        moveSpeed = Random.Range(0.15f,1.3f);
     }
 
     // Update is called once per frame
