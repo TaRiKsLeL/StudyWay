@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     [SerializeField] float m_Speed = 1f;
     Rigidbody m_Rigidbody;
     Animator anim;
+    bool holdingDown;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +39,17 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.DownArrow))
         {
             transform.position -= transform.forward * m_Speed * Time.deltaTime;
+        }
+
+        if (Input.anyKeyDown)
+        {
+            Move_Ani();
+            holdingDown = true;
+        }
+        if (!Input.anyKey && holdingDown)
+        {
+            Idle_Ani();
+            holdingDown = false;
         }
 
     }
