@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - PathTag
+  - AnswerCell
+  - NumToEnter
   layers:
   - Default
   - TransparentFX

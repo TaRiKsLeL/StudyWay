@@ -6,11 +6,13 @@ using UnityEngine;
 public class MiniGameSession : MonoBehaviour
 {
 
-    int score = 0;
+    public int score;
 
     private void Awake()
     {
-        SetUpSingleton();
+        //SetUpSingleton();
+        score = 0;
+        DontDestroyOnLoad(gameObject);
     }
 
     private void SetUpSingleton()
@@ -29,6 +31,11 @@ public class MiniGameSession : MonoBehaviour
     public int GetScore()
     {
         return score;
+    }
+
+    public void resetScore()
+    {
+        score = 0;
     }
 
     public void AddToScore(int scoreVal)

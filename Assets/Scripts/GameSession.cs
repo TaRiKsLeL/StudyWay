@@ -112,6 +112,8 @@ public class GameSession : MonoBehaviour
                 print(unlockedObstaclesByTriggerIndex.Count());
             }
         }
+
+        Destroy(FindObjectOfType<MiniGameSession>());
     }
 
     private void InstantiatePlayer(GameData data)

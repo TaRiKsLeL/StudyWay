@@ -25761,15 +25761,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4449120862878004, guid: 7c1b7eb3905d5694688d9bb9fe2c0d47, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 605.93
+      value: 607.57
       objectReference: {fileID: 0}
     - target: {fileID: 4449120862878004, guid: 7c1b7eb3905d5694688d9bb9fe2c0d47, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.539997
+      value: 3.54
       objectReference: {fileID: 0}
     - target: {fileID: 4449120862878004, guid: 7c1b7eb3905d5694688d9bb9fe2c0d47, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 296.33
+      value: 299.65
       objectReference: {fileID: 0}
     - target: {fileID: 4449120862878004, guid: 7c1b7eb3905d5694688d9bb9fe2c0d47, type: 3}
       propertyPath: m_LocalRotation.x
@@ -30187,26 +30187,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GamesTriggers
       objectReference: {fileID: 0}
-    - target: {fileID: 2332874938999990766, guid: d6f6806eb9ebb7343934f47d99056574,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 304.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2332874938999990766, guid: d6f6806eb9ebb7343934f47d99056574,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 552.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8476690738256888558, guid: d6f6806eb9ebb7343934f47d99056574,
-        type: 3}
-      propertyPath: scoreToUnlock
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 8476690738256888558, guid: d6f6806eb9ebb7343934f47d99056574,
-        type: 3}
-      propertyPath: obstacle
-      value: 
-      objectReference: {fileID: 2126569609}
     - target: {fileID: 261235930307266784, guid: d6f6806eb9ebb7343934f47d99056574,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -30262,16 +30242,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 261235930720765167, guid: d6f6806eb9ebb7343934f47d99056574,
-        type: 3}
-      propertyPath: obstacle
-      value: 
-      objectReference: {fileID: 370527996}
-    - target: {fileID: 261235930720765167, guid: d6f6806eb9ebb7343934f47d99056574,
-        type: 3}
-      propertyPath: scoreToUnlock
-      value: 177
-      objectReference: {fileID: 0}
     - target: {fileID: 261235930720765160, guid: d6f6806eb9ebb7343934f47d99056574,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -30281,6 +30251,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 295.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 261235930720765163, guid: d6f6806eb9ebb7343934f47d99056574,
+        type: 3}
+      propertyPath: ButtonsOptions.Array.data[0].LoadSceneName
+      value: RomanNumScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 261235930720765167, guid: d6f6806eb9ebb7343934f47d99056574,
+        type: 3}
+      propertyPath: obstacle
+      value: 
+      objectReference: {fileID: 370527996}
+    - target: {fileID: 261235930720765167, guid: d6f6806eb9ebb7343934f47d99056574,
+        type: 3}
+      propertyPath: scoreToUnlock
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 261235930797090482, guid: d6f6806eb9ebb7343934f47d99056574,
         type: 3}
@@ -30297,6 +30282,31 @@ PrefabInstance:
       propertyPath: BoxSize.width
       value: 400
       objectReference: {fileID: 0}
+    - target: {fileID: 261235930797090485, guid: d6f6806eb9ebb7343934f47d99056574,
+        type: 3}
+      propertyPath: ButtonsOptions.Array.data[0].LoadSceneName
+      value: CountriesCapitalsScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 2332874938999990766, guid: d6f6806eb9ebb7343934f47d99056574,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 304.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2332874938999990766, guid: d6f6806eb9ebb7343934f47d99056574,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 552.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8476690738256888558, guid: d6f6806eb9ebb7343934f47d99056574,
+        type: 3}
+      propertyPath: scoreToUnlock
+      value: 145
+      objectReference: {fileID: 0}
+    - target: {fileID: 8476690738256888558, guid: d6f6806eb9ebb7343934f47d99056574,
+        type: 3}
+      propertyPath: obstacle
+      value: 
+      objectReference: {fileID: 2126569609}
     - target: {fileID: 261235930720765165, guid: d6f6806eb9ebb7343934f47d99056574,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -30344,7 +30354,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 1
   obstacle: {fileID: 1804809251}
-  scoreToUnlock: 25
+  scoreToUnlock: 10
   unlocked: 0
 --- !u!1001 &310807349413351178
 PrefabInstance:
