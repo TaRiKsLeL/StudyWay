@@ -101,7 +101,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            finish();
+            Finish();
         }
         // StartCoroutine(TransitionToNextQuestion());
     }
@@ -131,7 +131,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            finish();
+            Finish();
         }
         //StartCoroutine(TransitionToNextQuestion());
     }
@@ -141,14 +141,14 @@ public class GameManager : MonoBehaviour
        
         if (countOfQuestion == 10)
         {
-            finish();
+            Finish();
         }
     }
-    void finish()
+    void Finish()
     {
         StopAllCoroutines();
         
        gameSession.AddToScore(score);
-        SceneManager.LoadScene(4);
+        SceneManager.LoadScene("FinishScene");
     }
 }
