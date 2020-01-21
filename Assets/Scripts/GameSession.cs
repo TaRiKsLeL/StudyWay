@@ -22,35 +22,18 @@ public class GameSession : MonoBehaviour
         if (unlockedObstaclesByTriggerIndex == null)
         {
             unlockedObstaclesByTriggerIndex = new List<int>();
-            print("I'm nulling List");
         }
-        //else
-        //{
-        //    unlockedObstaclesByTriggerIndex = SaveSystem.LoadGameSession().unlockedObstaclesByTriggerIndex.ToList();
-        //    print("I'm pulling saved List");
-        //}
 
-        print("Game Session: In Awake");
-
-        if (SaveSystem.LoadGameSession() == null)
+        if (SaveSystem.LoadGameSession() == null)  //ставлю зайця на початкову позицію
         {
             Instantiate(playerObject, basePlayerPosition, Quaternion.identity);
-
-            print("Game Session: In Awake -  New Game set up");
 
         }
         else
         {
-            print("Game Session: In Awake  -  Loading data");
             this.LoadGameSession();
             SaveGameSession();
-
         }
-    }
-
-    public void Update()
-    {
-        //print("unlockedObstaclesByTriggerIndex" + unlockedObstaclesByTriggerIndex.Count());
     }
 
     private void SetUpSingleton()
@@ -142,21 +125,6 @@ public class GameSession : MonoBehaviour
         onTriggerName = name;
     }
 
-
-    //public int GetTriggerIndex(GameObject gameObj)
-    //{
-    //    int i = 0;
-    //    foreach(GameObject t in miniGameTriggers)
-    //    {
-    //        if (t == gameObj)
-    //        {
-    //            return i;
-    //        }
-    //        i++;
-    //    }
-    //    return -1;
-    //}
-
     public List<int> GetUnlockedObstacles()
     {
         return unlockedObstaclesByTriggerIndex;
@@ -172,7 +140,7 @@ public class GameSession : MonoBehaviour
         score += scoreVal;
     }
 
-    public Transform GetPlayerTransform()
+    public Transform GetPlayerTransform() // для збереження даних
     {
         return GameObject.FindGameObjectWithTag("Player").transform;
     }

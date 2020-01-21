@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
+    [SerializeField] Animator transition;
+    [SerializeField] float transitionTime = 1f; 
+
    public void LoadNextScene()
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
@@ -19,10 +22,19 @@ public class SceneLoader : MonoBehaviour
     public void LoadMainScene()
     {
 
+        StartCoroutine(LoadSceneCaroutine());
+    }
+
+    IEnumerator LoadSceneCaroutine()
+    {
+        transition.SetTrigger("Start");
+
+        yield return new WaitForSeconds(transitionTime);
+
         SceneManager.LoadScene("Main Scene");
         if (!UnityEngine.SceneManagement.SceneManager.GetActiveScene().name.Equals("MenuScene"))
         {
-               FindObjectOfType<GameSession>().Awake();
+            FindObjectOfType<GameSession>().Awake();
         }
     }
 

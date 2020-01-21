@@ -20,7 +20,7 @@ public class PlatformBehaviourScript : MonoBehaviour
 
             if (data.unlockedObstaclesByTriggerIndex != null)
             {
-                if (data.unlockedObstaclesByTriggerIndex.ToList().Contains(index)){
+                if (data.unlockedObstaclesByTriggerIndex.ToList().Contains(index)){ //перевіряю чи мій індекс є в списку розблочених
                     print("My index " + index + " is in List");
                     obstacle.SetActive(false);
                 }
