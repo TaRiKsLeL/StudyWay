@@ -4,27 +4,27 @@ using UnityEngine;
 
 public class CameraScript : MonoBehaviour
 {
-    [SerializeField] public Transform playerObject;
-
-    [SerializeField] public float distanceFromObject;
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
+    [Range(0f,40f)]
+    [SerializeField] public float rotationSpeed = 30f;
 
     // Update is called once per frame
     void Update()
     {
-        /*Vector3 lookOnObject = playerObject.position - transform.position;
-
-        transform.forward = lookOnObject.normalized;
-
-        Vector3 playerLastPosition;
-        playerLastPosition = playerObject.position - lookOnObject.normalized * distanceFromObject;
-
-        playerLastPosition.y = playerObject.position.y + distanceFromObject / 2;
-
-        transform.position = playerLastPosition;
-        */
+        if (Input.GetKey(KeyCode.Alpha1))
+        {
+            transform.RotateAround(transform.parent.position,Vector3.up, rotationSpeed * Time.deltaTime);
+        }
+        else if (Input.GetKey(KeyCode.Alpha2))
+        {
+            transform.RotateAround(transform.parent.position, Vector3.down, rotationSpeed * Time.deltaTime);
+        }
+        else if (Input.GetKey(KeyCode.Alpha3))
+        {
+            transform.RotateAround(transform.parent.position, Vector3.back, rotationSpeed * Time.deltaTime);
+        }
+        else if (Input.GetKey(KeyCode.Alpha4))
+        {
+            transform.RotateAround(transform.parent.position, Vector3.forward, rotationSpeed * Time.deltaTime);
+        }
     }
 }
