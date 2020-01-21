@@ -37526,6 +37526,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 72369bb867b5bcd4b9d79508d5a369d7, type: 2}
+    - target: {fileID: 2988101837101630681, guid: d6f6806eb9ebb7343934f47d99056574,
+        type: 3}
+      propertyPath: ButtonsOptions.Array.data[0].LoadSceneName
+      value: QuizMane
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6f6806eb9ebb7343934f47d99056574, type: 3}
 --- !u!1 &261235931145857186 stripped
