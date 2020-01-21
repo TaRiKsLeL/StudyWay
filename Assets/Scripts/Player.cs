@@ -7,13 +7,15 @@ public class Player : MonoBehaviour
     [SerializeField] float m_Speed = 1f;
     Rigidbody m_Rigidbody;
     Animator anim;
+    KeyCode[] keycodesToMove;
+    bool holdingDown;
 
     // Start is called before the first frame update
     void Start()
     {
         m_Rigidbody = GetComponent<Rigidbody>();
         anim = GetComponent<Animator>();
-
+        keycodesToMove = new KeyCode[] { KeyCode.LeftArrow, KeyCode.RightArrow, KeyCode.UpArrow, KeyCode.DownArrow };
 
     }
 
@@ -38,6 +40,21 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.DownArrow))
         {
             transform.position -= transform.forward * m_Speed * Time.deltaTime;
+        }
+
+        for (int i = 0; i < keycodesToMove.Length; i++)
+        {
+            if (Input.GetKeyDown(keycodesToMove[i]))
+            {
+                Move_Ani();
+                holdingDown = true;
+            }
+        }
+
+        if (!Input.anyKey && holdingDown)
+        {
+            Idle_Ani();
+            holdingDown = false;
         }
 
     }
