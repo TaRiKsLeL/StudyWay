@@ -321,6 +321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44732734555b19f4a8a5e0c7ee1518ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 0
 --- !u!4 &183293984
 Transform:
   m_ObjectHideFlags: 0
@@ -347,7 +348,7 @@ GameObject:
   - component: {fileID: 333959328}
   - component: {fileID: 333959327}
   m_Layer: 5
-  m_Name: Text
+  m_Name: QuizFinishText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -15,9 +15,21 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/QuizGame/QuizMane.unity
+    path: Assets/Scenes/Minigames Scenes/QuizGame/Scenes/QuizMane.unity
     guid: d7e6058fe0ac2804bbdeb1cad932b7b3
   - enabled: 1
-    path: Assets/Scenes/QuizGame/FinishScene.unity
+    path: Assets/Scenes/Minigames Scenes/QuizGame/Scenes/FinishScene.unity
     guid: f50ecec3d4591d640a88c31720831919
+  - enabled: 1
+    path: Assets/Scenes/Minigames Scenes/CountriesCapitalsProj/Assets/Scenes/CountriesCapitalsScene.unity
+    guid: 5b29e83701bbc2d45bc2070345c78520
+  - enabled: 1
+    path: Assets/Scenes/Minigames Scenes/RomanNumProj/Assets/Scenes/RomanNumScene.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Minigames Scenes/FallingWordTypingGame/Assets/Scenes/TypingMain.unity
+    guid: 46b3adb7dcf662042b29afa6c5175850
+  - enabled: 1
+    path: Assets/Scenes/Minigames Scenes/FallingWordTypingGame/Assets/Scenes/TypingGameFinsh.unity
+    guid: b38ec8d76b5f94a4995f9760230bd6d2
   m_configObjects: {}
