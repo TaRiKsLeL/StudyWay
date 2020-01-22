@@ -266,13 +266,13 @@ MonoBehaviour:
     value: -4
   mixerGreenOutRedIn:
     overrideState: 1
-    value: 5
+    value: 7
   mixerGreenOutGreenIn:
     overrideState: 1
-    value: 87
+    value: 80
   mixerGreenOutBlueIn:
     overrideState: 1
-    value: 2
+    value: 10
   mixerBlueOutRedIn:
     overrideState: 1
     value: 3
@@ -1629,13 +1629,13 @@ MonoBehaviour:
     value: 1
   focusDistance:
     overrideState: 1
-    value: 4
+    value: 4.48
   aperture:
     overrideState: 1
-    value: 4
+    value: 6.9
   focalLength:
     overrideState: 1
-    value: 52
+    value: 64
   kernelSize:
     overrideState: 1
     value: 1
