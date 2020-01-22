@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class NumberController : MonoBehaviour
 {
+    public bool gameEnded = false;
+
     public float numShiftX;
     public float numStartX;
     public float numY;
@@ -13,9 +15,15 @@ public class NumberController : MonoBehaviour
     public float answerStartX;
     public float answerY;
 
+    public float gameDuration;
+
 
     public List<RomanNum> correctRomanNum;
     public List<GameObject> numObj;
+    public List<GameObject> createdNums;
+    public List<GameObject> createdBorders;
+   
+    MiniGameSession gameSession;
 
     public bool[] correctAnswers;
     private int number;
@@ -27,16 +35,31 @@ public class NumberController : MonoBehaviour
 
     void Start()
     {
+        gameSession = FindObjectOfType<MiniGameSession>();
+        gameSession.resetScore();
+
         Debug.Log("on start");
         AddNumbersSpr();
     }
 
     void Update()
     {
+        Debug.Log(gameDuration);
+        gameDuration -= Time.deltaTime;
+
+        if (gameDuration <= 0.0f)
+        {
+            Debug.Log("ha ha time over");
+            timerEnded();
+        }
 
     }
+    void timerEnded()
+    {
+        gameEnded = true;
+    }
 
-    void AddNumbersSpr()
+    public void AddNumbersSpr()
     {
         float currentNumX = numStartX;
         float currentAnswerX = answerStartX;
@@ -51,21 +74,35 @@ public class NumberController : MonoBehaviour
 
             if(extraNumberChance == 1)
             {
-                GameObject.Instantiate(numObj[Random.Range(0, numObj.Count-1)], new Vector2(currentNumX += numShiftX, numY), new Quaternion());
+                createdNums.Add(GameObject.Instantiate(numObj[Random.Range(0, numObj.Count-1)], new Vector2(currentNumX += numShiftX, numY), new Quaternion()));
             }
 
             //create roman number
-            GameObject.Instantiate(numObj[(int)generatedNum], new Vector2(currentNumX += numShiftX, numY), new Quaternion());
+            createdNums.Add(GameObject.Instantiate(numObj[(int)generatedNum], new Vector2(currentNumX += numShiftX, numY), new Quaternion()));
             //create cell for number
             BorderScript border = GameObject.Instantiate(numObj[(int)RomanNum.Cell], new Vector2(currentAnswerX += answerShiftX, answerY), new Quaternion())
                 .GetComponent<BorderScript>();
-                border.correctValue = generatedNum;
-                border.index = loopIter;
+            border.correctValue = generatedNum;
+            border.index = loopIter;
 
+            createdBorders.Add(border.gameObject);
+            
             loopIter++;
         }
     }
 
+    public void removeAll()
+    {
+        foreach(GameObject gameObjectTmp in createdNums)
+        {
+            Destroy(gameObjectTmp);
+        }
+        
+        foreach(GameObject gameObjectTmp in createdBorders)
+        {
+            Destroy(gameObjectTmp);
+        }
+    }
 
     public void GenerateNumber()
     {
