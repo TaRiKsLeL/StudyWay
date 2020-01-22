@@ -61,8 +61,6 @@ public class SceneTrigger : MonoBehaviour
     // if this script is on an object with a collider display the Gui
     void OnTriggerEnter()
     {
- 
-
         GuiOn = true;
     }
 
@@ -93,7 +91,8 @@ public class SceneTrigger : MonoBehaviour
             }
             else
             {
-                GUI.Box(BoxSize, WindowTitle + " Вам потрібно: " + GetComponent<PlatformBehaviourScript>().GetScoreToUnlock() + " очків");
+
+                GUI.Box(BoxSize, WindowTitle + "Вам потрібно: " + GetComponent<PlatformBehaviourScript>().GetScoreToUnlock() + " очків");
             }
 
             for (int i = 0; i < ButtonsOptions.Length; ++i)
