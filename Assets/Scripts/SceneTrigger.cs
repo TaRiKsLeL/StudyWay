@@ -61,6 +61,7 @@ public class SceneTrigger : MonoBehaviour
     // if this script is on an object with a collider display the Gui
     void OnTriggerEnter()
     {
+        //
         GuiOn = true;
     }
 

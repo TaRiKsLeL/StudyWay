@@ -7,7 +7,7 @@ using System.Linq;
 public class GameSession : MonoBehaviour
 {
 
-    [SerializeField] int score;
+    [SerializeField] public int score;
     [SerializeField] GameObject playerObject;
     [SerializeField] Vector3 basePlayerPosition;
     [SerializeField] Quaternion basePlayerQuaternion;

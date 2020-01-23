@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Minigames Scenes/RomanNumProj/Assets/Scenes/RomanNumScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Minigames Scenes/NumberProj/Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/Minigames Scenes/NumberProj/Assets/Scenes/NumberGameScene.unity
     guid: 19545c0c9b7331d40ba71124cc4b6bcb
+  - enabled: 1
+    path: Assets/Scenes/StudyWayFinishScene.unity
+    guid: d2e030f9eaa28d648a95ed012b34b8e3
   m_configObjects: {}
