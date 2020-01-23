@@ -184,7 +184,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   index: 0
   obstacle: {fileID: 0}
-  scoreToUnlock: 1000000
+  scoreToUnlock: 50
   unlocked: 0
 --- !u!1 &261235930797090483
 GameObject:

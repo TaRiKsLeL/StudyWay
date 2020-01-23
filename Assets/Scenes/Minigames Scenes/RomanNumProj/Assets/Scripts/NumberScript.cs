@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class NumberScript : MonoBehaviour
 {
     bool inCell;
@@ -13,22 +13,18 @@ public class NumberScript : MonoBehaviour
 
     Collider2D lastCollided;
     MiniGameSession gameSession;
+    NumberController numberController;
+    //RetrunBtn retrunBtn;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        gameSession = FindObjectOfType<MiniGameSession>();
-        gameSession.resetScore();
 
+        gameSession = FindObjectOfType<MiniGameSession>();
         startPosition = transform.position;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     private void OnMouseDown()
     {
@@ -60,7 +56,9 @@ public class NumberScript : MonoBehaviour
 
             BorderScript script = lastCollided.GetComponent<BorderScript>();
 
-            bool[] correctAnsw = GameObject.Find("NumberController").GetComponent<NumberController>().correctAnswers;
+            numberController = GameObject.Find("NumberController").GetComponent<NumberController>();
+
+            bool[] correctAnsw = numberController.correctAnswers;
 
 
             if (value == script.correctValue)
@@ -80,6 +78,16 @@ public class NumberScript : MonoBehaviour
             {
                 gameSession.AddToScore(10);
 
+                numberController.removeAll();
+
+                if (numberController.gameEnded)
+                {
+                   FindObjectOfType<BtnReturnScript>().ActivateBtn();
+                }
+                else
+                {
+                    numberController.AddNumbersSpr();
+                }
                 Debug.Log("you win");
             }
 
