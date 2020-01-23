@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class ShowNumScript : MonoBehaviour
+public class BtnReturnScript : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -14,5 +15,11 @@ public class ShowNumScript : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void ActivateBtn()
+    {
+        Debug.Log("activate Btn");
+        this.GetComponent<Button>().interactable = true;
     }
 }
