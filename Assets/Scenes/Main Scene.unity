@@ -2629,7 +2629,7 @@ PrefabInstance:
     - target: {fileID: 593682831584645819, guid: 46da46018d29a1248a93e8e5d7fa35f7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 593682831584645819, guid: 46da46018d29a1248a93e8e5d7fa35f7,
         type: 3}
@@ -32686,7 +32686,7 @@ RectTransform:
   m_Children:
   - {fileID: 1154711940}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -69495,7 +69495,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 125.5, y: -174.8, z: -177.4}
 --- !u!1001 &1714316301
 PrefabInstance:
@@ -84174,7 +84174,7 @@ Transform:
   m_LocalScale: {x: 1.0456334, y: 0.95859313, z: 0.9520268}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 29.318, y: -110.871, z: 1.779}
 --- !u!114 &2073489734
 MonoBehaviour:
@@ -87622,7 +87622,7 @@ PrefabInstance:
     - target: {fileID: 261235930307266784, guid: d6f6806eb9ebb7343934f47d99056574,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 261235930307266784, guid: d6f6806eb9ebb7343934f47d99056574,
         type: 3}
@@ -87660,6 +87660,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 1bcfcde397c44e44881436c27af726c8,
         type: 2}
+    - target: {fileID: 261235930720765163, guid: d6f6806eb9ebb7343934f47d99056574,
+        type: 3}
+      propertyPath: WindowTitle
+      value: "\u0413\u0440\u0430 \u0434\u043B\u044F \u0437\u0430\u043F\u0430\u043C'\u044F\u0442\u043E\u0432\u0443\u0432\u0430\u043D\u043D\u044F
+        \u0440\u0438\u043C\u0441\u044C\u043A\u0438\u0445 \u0447\u0438\u0441\u0435\u043B. "
+      objectReference: {fileID: 0}
     - target: {fileID: 261235930720765167, guid: d6f6806eb9ebb7343934f47d99056574,
         type: 3}
       propertyPath: obstacle
@@ -87668,7 +87674,7 @@ PrefabInstance:
     - target: {fileID: 261235930720765167, guid: d6f6806eb9ebb7343934f47d99056574,
         type: 3}
       propertyPath: scoreToUnlock
-      value: 50
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 261235930797090482, guid: d6f6806eb9ebb7343934f47d99056574,
         type: 3}
