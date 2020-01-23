@@ -13,7 +13,7 @@ public class TypingWordManager : MonoBehaviour
     public AudioClip MusicClip;
     public AudioSource MusicSource;
 
-    public static int score=0;
+    public static int score ;
     private float timer = 60f;
     public bool hasActiveWord;
     private Word activeWord;
@@ -84,6 +84,7 @@ public class TypingWordManager : MonoBehaviour
 
     private void Start()
     {
+        score = 0;
         StartCoroutine("TimeRemain");
     }
 
