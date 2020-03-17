@@ -39,14 +39,17 @@ public class MathExpresion : MonoBehaviour
     void Update()
     {
         currentTimeToSolve -= Time.deltaTime;
-       
-        if(!gameOver)
-            timeTxt.text = currentTimeToSolve.ToString();
+
+        if (!gameOver)
+        {
+            timeTxt.text = ((int)currentTimeToSolve).ToString();
+        }
 
         if (currentTimeToSolve <= 0)
         {
             gameOver = true;
             timeTxt.text = "0";
+            timeTxt.GetComponent<Animator>().enabled = false;
             FindObjectOfType<BtnReturnScript>().ActivateBtn();
 
         }
@@ -121,7 +124,7 @@ public class MathExpresion : MonoBehaviour
         score++;
         miniGameSession.AddToScore(1);
         createExpression();
-        GameObject.Find("ScoreTxt").GetComponent<Text>().text = scoreTxt + score;
+        GameObject.Find("ScoreTxt").GetComponent<Text>().text = score.ToString();
 
     }
 

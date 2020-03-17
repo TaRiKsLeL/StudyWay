@@ -14,7 +14,7 @@ public class TypingFinishScript : MonoBehaviour
     {
         gameSession = FindObjectOfType<MiniGameSession>(); 
         typingFinishScore = TypingWordManager.score;
-        typingFinishText.text = "Тобі вдалось заробити " + typingFinishScore + " балів ";
+        typingFinishText.text = "Кількіст зароблених тобою балів: "+typingFinishScore;
         gameSession.AddToScore(typingFinishScore);
     }
 

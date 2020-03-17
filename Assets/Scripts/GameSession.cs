@@ -2,12 +2,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 using System.Linq;
 
 public class GameSession : MonoBehaviour
 {
-
     [SerializeField] public int score;
+    [SerializeField] List<GameObject> playerObjects;
     [SerializeField] GameObject playerObject;
     [SerializeField] Vector3 basePlayerPosition;
     [SerializeField] Quaternion basePlayerQuaternion;
@@ -18,6 +19,9 @@ public class GameSession : MonoBehaviour
     public void Awake()
     {
         SetUpSingleton();
+        SetUpPostProcessVolumeSingleton();
+
+        ImplementSettingsData();
 
         if (unlockedObstaclesByTriggerIndex == null)
         {
@@ -46,6 +50,46 @@ public class GameSession : MonoBehaviour
         else
         {
             DontDestroyOnLoad(gameObject);
+        }
+    }
+
+    private void SetUpPostProcessVolumeSingleton()
+    {
+        
+        if (FindObjectsOfType<PostProcessVolume>().Length > 1)
+        {
+            Destroy(FindObjectOfType<PostProcessVolume>());
+        }
+        else
+        {
+            DontDestroyOnLoad(FindObjectOfType<PostProcessVolume>());
+        }
+    }
+
+    private void ImplementSettingsData()
+    {
+        if (FindObjectOfType<SettingsManager>() != null)
+        {
+            SettingsManager settingsManager = FindObjectOfType<SettingsManager>();
+            playerObject = playerObjects[settingsManager.GetCharacterId()];
+
+
+            if (settingsManager.EffectsEnabled())
+            {
+                DepthOfField depthOfField;
+                if (FindObjectOfType<PostProcessVolume>().profile.TryGetSettings(out depthOfField))
+                {
+                    depthOfField.aperture.value = settingsManager.GetBokehValue();
+                }
+            }
+            else
+            {
+                Destroy(FindObjectOfType<PostProcessVolume>());
+            }
+        }
+        else
+        {
+            playerObject = playerObjects[0];
         }
     }
 
